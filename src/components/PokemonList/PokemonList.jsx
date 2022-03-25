@@ -6,22 +6,23 @@ import {Button} from "antd";
 
 const PokemonList = observer(() => {
     const [isShowBtn, setIsShowBtn] = useState(true);
-    const { pokemonList , getNextPokemon } = charactersStore
+    const {pokemonList, getNextPokemon} = charactersStore
     const handleClick = () => {
-         getNextPokemon();
+        getNextPokemon();
     };
     const CharactersList = pokemonList.map(el => (
         <div>
             {charactersStore.isLoading
-            ? <Preloader />
-            : el.name}
+                ? <Preloader/>
+                : el.name}
         </div>
     ))
+    console.log(CharactersList);
     return (
         <div>
             {CharactersList}
             {
-                isShowBtn && <Button style={{ background: '#2eb96c' }} onClick={handleClick}>Показать ещё</Button>
+                isShowBtn && <Button style={{background: '#2eb96c'}} onClick={handleClick}>Показать ещё</Button>
             }
         </div>
     );

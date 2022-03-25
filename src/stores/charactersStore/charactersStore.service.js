@@ -9,7 +9,7 @@ const service = {
             let data = null
             if (path) {
                 data = await axios.get(`${path}`);
-            }else {
+            } else {
                 data = await axios.get(`${baseApiUrl}${pokoEndpoint}`);
             }
             return data.data;
